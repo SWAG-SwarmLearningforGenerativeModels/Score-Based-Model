@@ -118,13 +118,14 @@ Resolution (384 x 384)
 ![image_gen](https://github.com/SWAG-SwarmLearningforGenerativeModels/Score-Based-Model/assets/77448406/1afc4cf4-bc5c-4667-91fe-de743cc1fe37)
 
 Resolution (512 x 512)
-![image-grid-225000](https://github.com/SWAG-SwarmLearningforGenerativeModels/Score-Based-Model/assets/77448406/b2c659e3-8f7d-4c95-9640-9c1fed91f389)
+![image-grid-300000](https://github.com/SWAG-SwarmLearningforGenerativeModels/Score-Based-Model/assets/77448406/06cafcc4-1519-46aa-b2ba-b7b6bb67c01c)
 
 ## References
 
 ```bib
 @inproceedings{song2020improved,
-  author    = {Yang Song and Stefano Ermon},
+  author    = {Yang Song and Stefano Ermon},![Uploading image-grid-300000.jpg…]()
+
   editor    = {Hugo Larochelle and
                Marc'Aurelio Ranzato and
                Raia Hadsell and
