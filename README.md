@@ -69,7 +69,7 @@ For example, we can train an unconditional 2D abdonemal CT scan
 python main.py --config abdomen2dCT.yml --doc abdomen2dCT
 ```
 
-Log files will be saved in `<exp>/unconditional/logs/abdomen2dCT`.
+Log files will be saved in `<exp>/unconditional/logs/abdomen2dCT`
 
 For conditional training
 
@@ -77,9 +77,11 @@ For conditional training
 python main.py --config abdomen2dCT.yml --doc abdomen2dCT --conditional
 ```
 
+Log files will be saved in `<exp>/conditional/logs/abdomen2dCT`
+
 ### Sampling
 
-If we want to sample an image of an unconditional abdonemal CT after training, we can edit `abdomen2dCT.yml` to specify the `ckpt_id` under the group `sampling`, and then run the following
+If we want to sample an image of an unconditional abdonemal CT after training, we can edit `abdomen2dCT.yml` to specify the `ckpt_id` under the group `sampling` or ignore to use the last saved model, and then run the following
 
 ```bash
 python main.py --doc abdomen2dCT --abdomen2dCT brain.yml --sample
@@ -90,7 +92,11 @@ For conditional sampling
 python main.py --doc abdomen2dCT --abdomen2dCT brain.yml --sample --conditional
 ```
 
-Samples will be saved in `<exp>/<(un)conditional>/abdomen2dCT/image_samples`
+Samples will be saved in 
+
+`<exp>/<unconditional>/abdomen2dCT/image_samples` for unconditional
+or
+`<exp>/<conditional>/abdomen2dCT/image_samples` for conditional
 
 ## Sampled Images
 
