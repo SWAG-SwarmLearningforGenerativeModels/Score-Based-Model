@@ -1,9 +1,9 @@
 # Score-Based Model
 A score-based model repo. Images can be trained `conditionally` or `unconditionally`. 
 
-## Running Experiments
+## 1. Running Experiments
 
-### Dependencies
+### 1.1. Dependencies
 
 Run the following to install all necessary python packages for our code.
 
@@ -11,7 +11,7 @@ Run the following to install all necessary python packages for our code.
 pip install -r requirements.txt
 ```
 
-### Project structure
+### 1.2 Project structure
 
 `main.py` is the file that you should run for both training and sampling. Execute ```python main.py --help``` to get its usage description:
 
@@ -61,7 +61,7 @@ Configuration files are in `config/`. You don't need to include the prefix `conf
     └── <doc> # this is the log_dir of tensorboard
 ```
 
-### Training
+### 1.3 Training
 
 For example, we can train an unconditional 2D abdonemal CT scan
 
@@ -79,7 +79,9 @@ python main.py --config abdomen2dCT.yml --doc abdomen2dCT --conditional
 
 Log files will be saved in `<exp>/conditional/logs/abdomen2dCT`
 
-### Sampling
+## 2. Sampling Experiment
+
+### 2.1. Sampling Images
 
 If we want to sample an image of an unconditional abdonemal CT after training, we can edit `abdomen2dCT.yml` to specify the `ckpt_id` under the group `sampling` or ignore to use the last saved model, and then run the following
 
@@ -98,10 +100,10 @@ Samples will be saved in
 
 `<exp>/<conditional>/abdomen2dCT/image_samples` for conditional.
 
-<span style="color:red">You should have trained a conditional model to sample conditionally or trained unconditional model to sample unconditionally.</span>
+NB: You should have trained a conditional model to sample conditionally or trained unconditional model to sample unconditionally.
 
 
-## Sampled Images
+### 2.2. Result
 
 Resolution (384 x 384)
 ![image_gen](https://github.com/SWAG-SwarmLearningforGenerativeModels/Score-Based-Model/assets/77448406/1afc4cf4-bc5c-4667-91fe-de743cc1fe37)
