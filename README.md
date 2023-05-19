@@ -1,5 +1,5 @@
 # Score-Based Model
-A score-based model repo. Images can be trained `conditionally` or `unconditionally`. 
+A score-based model repo. Images can be trained `conditionally` and `unconditionally`. 
 
 
 ## 1. Running Experiments
