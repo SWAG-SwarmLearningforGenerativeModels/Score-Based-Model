@@ -94,9 +94,12 @@ python main.py --doc abdomen2dCT --abdomen2dCT brain.yml --sample --conditional
 
 Samples will be saved in 
 
-`<exp>/<unconditional>/abdomen2dCT/image_samples` for unconditional
-or
-`<exp>/<conditional>/abdomen2dCT/image_samples` for conditional
+`<exp>/<unconditional>/abdomen2dCT/image_samples` for unconditional.
+
+`<exp>/<conditional>/abdomen2dCT/image_samples` for conditional.
+
+<span style="color:red">You should have trained a conditional model to sample conditionally or trained unconditional model to sample unconditionally.</span>
+
 
 ## Sampled Images
 
