@@ -98,10 +98,7 @@ Resolution (384 x 384)
 ![image_gen](https://github.com/SWAG-SwarmLearningforGenerativeModels/Score-Based-Model/assets/77448406/1afc4cf4-bc5c-4667-91fe-de743cc1fe37)
 
 Resolution (512 x 512)
-
-![image_grid_300000](https://github.com/SWAG-SwarmLearningforGenerativeModels/Score-Based-Model/assets/77448406/6c8c9019-f43b-45ac-a01f-2b9126b86703)
-![image_grid_315000](https://github.com/SWAG-SwarmLearningforGenerativeModels/Score-Based-Model/assets/77448406/87dba0b5-9a72-4f07-9663-659892382523)
-
+![imgonline-com-ua-twotoone-LaUkV5BQCJ](https://github.com/SWAG-SwarmLearningforGenerativeModels/Score-Based-Model/assets/77448406/f34c0e64-8251-48fd-8c8a-8f6c3fe4c2ce)
 
 ## References
 
