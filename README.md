@@ -47,14 +47,14 @@ Configuration files are in `config/`. You don't need to include the prefix `conf
 │      └── <conditional> # a folder for logging all conditional results
 │         └── <image_samples> # a folder for all samples produced after training
 │         ├── <samples>    # a folder for all samples produced during training
-│         ├── checkpoint_x.pth # the checkpoint file saved at the x-th training iteration
+│         ├── checkpoint_x.pt # the checkpoint file saved at the x-th training iteration
 │         ├── checkpoint.pth   # the checkpoint file saved at the last training iteration
 │         ├── config.yml # the configuration file for training this model
 │         └── stdout.txt # all outputs to the console during training
 │      └── <unconditional> # a folder for logging all unconditional results
 │         └── <image_samples> # a folder for all generated samples produced after training
 │         ├── <samples> # all samples produced during training
-│         ├── checkpoint_x.pth # the checkpoint file saved at the x-th training iteration
+│         ├── checkpoint_x.pt # the checkpoint file saved at the x-th training iteration
 │         ├── checkpoint.pth   # the checkpoint file saved at the last training iteration
 │         ├── config.yml # the configuration file for training this model
 │         └── stdout.txt # all outputs to the console during training    
