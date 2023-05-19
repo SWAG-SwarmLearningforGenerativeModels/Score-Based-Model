@@ -78,7 +78,7 @@ For example, we can train an unconditional 2D abdonemal CT scan
 python main.py --config abdomen2dCT.yml --doc abdomen2dCT
 ```
 
-Log files will be saved in `<exp>/unconditional/logs/abdomen2dCT`
+Log files will be saved in `<exp>/logs/abdomen2dCT/unconditional`
 
 For conditional training
 
@@ -86,7 +86,7 @@ For conditional training
 python main.py --config abdomen2dCT.yml --doc abdomen2dCT --conditional
 ```
 
-Log files will be saved in `<exp>/conditional/logs/abdomen2dCT`
+Log files will be saved in `<exp>/logs/abdomen2dCT/conditional`
 
 ## 2. Sampling Experiment
 
