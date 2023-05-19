@@ -11,7 +11,7 @@ Run the following to install all necessary python packages for our code.
 pip install -r requirements.txt
 ```
 
-### 1.2 Project structure
+### 1.2. Project structure
 
 `main.py` is the file that you should run for both training and sampling. Execute ```python main.py --help``` to get its usage description:
 
@@ -61,7 +61,7 @@ Configuration files are in `config/`. You don't need to include the prefix `conf
     └── <doc> # this is the log_dir of tensorboard
 ```
 
-### 1.3 Training
+### 1.3. Training
 
 For example, we can train an unconditional 2D abdonemal CT scan
 
@@ -140,4 +140,3 @@ and/or our previous work
   year={2019}
 }
 ```
-
