@@ -66,7 +66,7 @@ Configuration files are in `config/`. You don't need to include the prefix `conf
 
 * Navigate to the configs folder, you should have a `project_config_file.yml` file for your project (e.g xray.yml, abdomen2dCT.yml, etc).
 * In this `project_config_file.yml` file, set training, sampling, data, model and optimizer parameters accordingly.
-* In `datasets.py -> in __init__.py`, create a dataset for your images in the `get_dataset` function which returns train and test dataset.
+* In `datasets/__init__.py`, create a dataset for your images in the `get_dataset` function which returns train and test dataset.
 * In  main.py  file, you can parse default command-line arguments for the project and loggings.
 * Save model (snapshot_freq parameter is set under training attribute in the `project_config_file.yml` file).
 
