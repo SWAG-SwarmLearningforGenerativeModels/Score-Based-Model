@@ -95,12 +95,12 @@ Log files will be saved in `<exp>/logs/abdomen2dCT/conditional`
 If we want to sample an image of an unconditional abdonemal CT after training, we can edit `abdomen2dCT.yml` to specify the `ckpt_id` under the group `sampling` or ignore to use the last saved model, and then run the following
 
 ```bash
-python main.py --doc abdomen2dCT --abdomen2dCT brain.yml --sample
+python main.py --config abdomen2dCT.yml --doc abdomen2dCT --sample
 ```
 For conditional sampling
 
 ```bash
-python main.py --doc abdomen2dCT --abdomen2dCT brain.yml --sample --conditional
+python main.py --config abdomen2dCT.yml --doc abdomen2dCT --sample --conditional
 ```
 
 Samples will be saved in 
