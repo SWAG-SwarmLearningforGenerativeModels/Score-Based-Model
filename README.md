@@ -88,6 +88,19 @@ python main.py --config abdomen2dCT.yml --doc abdomen2dCT --conditional
 
 Log files will be saved in `<exp>/logs/abdomen2dCT/conditional`
 
+### 1.5. Resume Training
+
+Resume training model by running
+
+```bash
+python main.py --config abdomen2dCT.yml --doc abdomen2dCT --resume_training
+```
+For conditional
+
+```bash
+python main.py --config abdomen2dCT.yml --doc abdomen2dCT --resume_training --conditional
+```
+
 ## 2. Sampling Experiment
 
 ### 2.1. Sampling Images
