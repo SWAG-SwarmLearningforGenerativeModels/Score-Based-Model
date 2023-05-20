@@ -37,7 +37,7 @@ class NCSNRunner():
 
         tb_logger = self.config.tb_logger
 
-        score = NCSNv3Deepest(self.config)
+        score = NCSNv3Deepest(self.config).to(self.config.device)
         score = torch.nn.DataParallel(score)
 
         optimizer = get_optimizer(self.config, score.parameters())
