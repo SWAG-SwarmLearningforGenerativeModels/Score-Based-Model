@@ -240,7 +240,7 @@ class NCSNRunner():
 
         print(f'Pre-trained model loaded')
 
-        score = get_model(self.config)
+        score = NCSNv3Deepest(self.config).to(self.config.device)
         score = torch.nn.DataParallel(score)
 
         score.load_state_dict(states[0], strict=True)
