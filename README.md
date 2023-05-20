@@ -137,7 +137,7 @@ Resolution (512 x 512)
 
 ```bib
 @inproceedings{song2020improved,
-  author    = {Yang Song and Stefano Ermon},![Uploading image-grid-300000.jpg…]()
+  author    = {Yang Song and Stefano Ermon}
 
   editor    = {Hugo Larochelle and
                Marc'Aurelio Ranzato and
