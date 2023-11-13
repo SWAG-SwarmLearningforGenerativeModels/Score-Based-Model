@@ -30,6 +30,7 @@ def get_dataset(args, config):
 
         all_dataset = torchvision.datasets.ImageFolder(
             config.data.data_dir, transform=transforms)
+        print("Class to index:",all_dataset.class_to_idx)
 
     if config.data.dataset == 'brain':
 
