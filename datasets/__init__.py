@@ -19,98 +19,16 @@ import numpy as np
 def get_dataset(args, config):
     global transforms
 
-    if config.data.dataset == 'xray':
+    transforms = torchvision.transforms.Compose([
+        torchvision.transforms.ToTensor(),
+        torchvision.transforms.Grayscale(1),
+        torchvision.transforms.Resize(
+            (config.data.image_size, config.data.image_size), antialias=True)
+    ])
 
-        transforms = torchvision.transforms.Compose([
-            torchvision.transforms.ToTensor(),
-            torchvision.transforms.Grayscale(1),
-            torchvision.transforms.Resize(
-                (config.data.image_size, config.data.image_size), antialias=True)
-        ])
-
-        all_dataset = torchvision.datasets.ImageFolder(
-            config.data.data_dir, transform=transforms)
-        print("Class to index:",all_dataset.class_to_idx)
-
-    if config.data.dataset == 'brain':
-
-        transforms = torchvision.transforms.Compose([
-            torchvision.transforms.ToTensor(),
-            torchvision.transforms.Grayscale(1),
-            torchvision.transforms.Resize(
-                (config.data.image_size, config.data.image_size), antialias=True)
-        ])
-
-        data1 = torchvision.datasets.ImageFolder(
-            '/home/domainHomes/aokolie/Desktop/Augustine Workspace/SWAG PROJECT/Score-Based-Model-SWAG/Testing', transform=transforms)
-        data2 = torchvision.datasets.ImageFolder(
-            '/home/domainHomes/aokolie/Desktop/Augustine Workspace/SWAG PROJECT/Score-Based-Model-SWAG/Training', transform=transforms)
-
-        all_dataset = torch.utils.data.ConcatDataset([data1, data2])
-
-    elif config.data.dataset == 'abdomen2dCT':
-        class RSNA(Dataset):
-
-            def __init__(self):
-
-                # Attributes
-                self.image_size = config.data.image_size
-                self.channels = config.data.channels
-                self.frame = pd.read_csv(
-                    "/home/domainHomes/aokolie/Desktop/Augustine Workspace/SWAG PROJECT/datasets/CTs/datasets/RSNA Pulmonary Embolism/valid_train.csv")
-
-            def __len__(self):
-                return (self.frame.shape[0])
-
-            def read_dicom_image(self, path):
-                img = dicom.dcmread(path)
-                return (img.pixel_array)
-
-            def show_slice_window(self, slice):
-                # Set the range of brightness values manually
-                min_brightness = -1000
-                max_brightness = 1000
-
-                # Clip the brightness values to the specified range
-                clipped_image_np = np.clip(
-                    slice, min_brightness, max_brightness)
-
-                # scale the brightness values to the full range (0-1)
-                scaled_image_np = (
-                    clipped_image_np - min_brightness) / (max_brightness - min_brightness)
-
-                return scaled_image_np
-
-            def get_hounsfield_units(self, dicom_file):
-                # Read the DICOM file
-                ds = dicom.dcmread(dicom_file)
-
-                # Get the pixel data
-                pixel_data = ds.pixel_array
-
-                # Apply the rescale slope and rescale intercept to obtain Hounsfield Units
-                rescale_slope = float(ds.RescaleSlope)
-                rescale_intercept = float(ds.RescaleIntercept)
-                hounsfield_units = pixel_data * rescale_slope + rescale_intercept
-
-                return hounsfield_units
-
-            def __getitem__(self, idx):
-                if torch.is_tensor(idx):
-                    idx = idx.tolist()
-
-                # complete image path and read
-                img_path = self.frame['image'].iloc[idx]
-
-                image = self.get_hounsfield_units(img_path)
-                image = self.show_slice_window(image)
-                resize_image = cv2.resize(image, dsize=(
-                    self.image_size, self.image_size))
-                img_tensor = torch.from_numpy(resize_image[None, ...]).float()
-
-                return img_tensor, torch.tensor(1)
-
-        all_dataset = RSNA()
+    all_dataset = torchvision.datasets.ImageFolder(
+        config.data.data_dir, transform=transforms)
+    print("Class to index:",all_dataset.class_to_idx)
 
     # Get the number of samples
     num_samples = len(all_dataset)
