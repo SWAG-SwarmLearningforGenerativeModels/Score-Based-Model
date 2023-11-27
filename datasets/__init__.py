@@ -6,13 +6,24 @@ import torchvision.transforms as transforms
 
 def get_dataset(args, config):
     global transforms
+    if config.data.channels == 1:
+        transforms = torchvision.transforms.Compose([
+            torchvision.transforms.ToTensor(),
+            torchvision.transforms.Grayscale(1),
+            torchvision.transforms.Resize(
+                (config.data.image_size, config.data.image_size), antialias=True)
+        ])
+    elif config.data.channels == 3:
+        transforms = torchvision.transforms.Compose([
+            torchvision.transforms.ToTensor(),
+            torchvision.transforms.Resize(
+                (config.data.image_size, config.data.image_size), antialias=True)
+        ])
+    else:
+        assert False, "This number of channels is not supported yet, pleas implement"
 
-    transforms = torchvision.transforms.Compose([
-        torchvision.transforms.ToTensor(),
-        torchvision.transforms.Grayscale(1),
-        torchvision.transforms.Resize(
-            (config.data.image_size, config.data.image_size), antialias=True)
-    ])
+
+
 
     all_dataset = torchvision.datasets.ImageFolder(
         config.data.data_dir, transform=transforms)
