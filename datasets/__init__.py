@@ -20,7 +20,7 @@ def get_dataset(args, config):
                 (config.data.image_size, config.data.image_size), antialias=True)
         ])
     else:
-        assert False, "This number of channels is not supported yet, pleas implement"
+        assert False, "This number of channels is not supported yet, please implement"
 
 
 
